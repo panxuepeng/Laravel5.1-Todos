@@ -10,6 +10,7 @@ use App\Models\Todo;
 use Queue;
 use App\Commands\SendCms;
 use App\Events\AfterTodoDeleted;
+use Cms;
 
 class TodosController extends Controller
 {
@@ -43,8 +44,9 @@ class TodosController extends Controller
         $todo->save();
         
         //app('cms')->send("CMS: $title");
+        Cms::send("CMS: $title");
         
-        Queue::push(new SendCms($title));
+        //Queue::push(new SendCms($title));
         
         return json_encode($todo);
     }
