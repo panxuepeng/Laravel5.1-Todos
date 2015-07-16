@@ -109,19 +109,32 @@ public/css/todos.css
     ol {font-size:24px; margin-left:20px; width: 433px;}
     li {text-align: left; height:40px; line-height:40px;}
 
+    #list span.edit {float:right; color:#666; font-size:14px; }
+    #list span.edit a{margin:0 2px; cursor:pointer;}
+    #list span.edit a:hover{color:000;}
+
+    .status-1 {text-decoration:line-through;}
+
 ### 创建控制器文件
-php artisan make:controller --plain TodoController
+
+    php artisan make:controller --plain TodoController
 
 ### 路由
-Route::controller('todos', 'TodosController');
+
+    Route::controller('todos', 'TodosController');
+
 参考:
 http://www.golaravel.com/laravel/docs/5.0/controllers/#implicit-controllers
 
-### 创建表
-php artisan make:migration create_todos_table
 
+### 创建表
+
+    php artisan make:migration create_todos_table
+
+    
 ### 创建模型文件
-php artisan make:model Models/Todo
+    
+    php artisan make:model Models/Todo
 
 ### 完成保存操作
 
@@ -180,7 +193,8 @@ public/js/todos.js 文件：
     ], ['title.max'=>'标题长度不能超过:max']);
 
 ### 服务
-php artisan make:provider CmsServiceProvider
+
+    php artisan make:provider CmsServiceProvider
 
 ### 队列
     

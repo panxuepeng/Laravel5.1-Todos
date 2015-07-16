@@ -80,6 +80,10 @@ class TodosController extends Controller
         Todo::destroy($id);
         
         event(new AfterTodoDeleted($id));
+        // log
+        // email
+        // cms
+        
         
         return 'delete';
     }
